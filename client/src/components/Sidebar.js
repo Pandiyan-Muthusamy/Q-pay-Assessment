@@ -5,8 +5,8 @@ import { NAV_ITEMS as navItems } from "../constants/index";
 import { NavLink } from "react-router-dom";
 
 export default function Sidebar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [openHistory, setOpenHistory] = useState(false);
+const [isOpen, setIsOpen] = useState(false);
+const [openHistory, setOpenHistory] = useState(false);
 
   return (
     <>
@@ -19,9 +19,7 @@ export default function Sidebar() {
           {navItems.map((item) =>
             item.children ? (
               <div key={item.key} className="mb-2">
-                {/* History main row */}
                 <div className="flex items-center justify-between">
-                  {/* History NavLink */}
                   <NavLink
                     to={`/${item.key}`}
                     className={({ isActive }) =>
@@ -34,7 +32,7 @@ export default function Sidebar() {
                   >
                     {item.icon}
                     <span className="ml-4 text-sm">{item.name}</span>
-                                      <button
+                    <button 
                     onClick={() => setOpenHistory(!openHistory)}
                     className="px-2  mx-auto text-text-primary hover:text-text-primary"
                   >
